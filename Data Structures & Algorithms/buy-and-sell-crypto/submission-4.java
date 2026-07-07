@@ -1,0 +1,14 @@
+class Solution {
+    public int maxProfit(int[] arr)
+    {
+        int min = Integer.MAX_VALUE;
+        int max = 0;
+        for(int i = 0; i < arr.length; i++)
+        {
+          int currValue = arr[i] - min;
+          max = Math.max(max, currValue);
+          min = Math.min(arr[i], min);
+        }
+        return max;
+    }
+}
